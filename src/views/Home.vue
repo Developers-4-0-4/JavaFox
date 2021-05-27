@@ -1,9 +1,11 @@
 <template>
   <div class="home">
-    <Navbar />         
-    <SectionOne/>
-    <CardsCategoria/>
-    <Footer />
+    <Navbar categoralink="#section" idNavebar="navbar-example2" contatolink="#contatolink" />         
+    <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+      <SectionOne sectionOne="section"/>
+      <CardsCategoria contatolink="contatolink"/>
+      <Footer />
+    </div>
   </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid border cards-background p-5 mt-5 mb-5">
+    <div class="container-fluid border cards-background p-5 mt-5 mb-5" >
         <div class="row">
             <div class="col-12 text-center">
                 <h1>Categorias</h1>
@@ -55,6 +55,8 @@ export default {
     data(){
         return{
         }
+    },
+    props:{
     }
 }
 </script>

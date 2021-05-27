@@ -1,8 +1,8 @@
 <template>
-    <div class="container-fluid p-3 mb-4">
+    <div class="container-fluid p-3 mb-4" :id="sectionOne">
         <div class="row">
             <div class="col-12 text-center">
-                <h1>JavaFox Drivers</h1>
+                <img src="../../assets/logo.jpg" class="img-fluid img" alt="">
                 <h5>FORMANDO MELHORES AUTOMOBLISTAS</h5>
             </div>
             <div class="col-12 border p-4">
@@ -52,7 +52,10 @@ export default {
 
         }
     },
-    methods:{}
+    methods:{},
+    props:{
+        sectionOne:Text
+    }
 }
 </script>
 
@@ -60,5 +63,9 @@ export default {
 .Card-Aligmnt{
     display: flex;
     float: left;
+}
+.img{
+    margin-top: -80px;
+    width: 60%;
 }
 </style>
