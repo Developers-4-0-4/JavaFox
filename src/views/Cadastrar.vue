@@ -25,10 +25,22 @@
                     </p>
                     </b-col>
 
-                    <form v-on:submit="Validacao" class="col-12">
-                    <div class="row">
+                    <form v-on:submit="Validacao">
                         <b-col cols="12" md="12">
-                            <div class="texto">
+                            <div class="campoTexto">
+                            <b-icon class="icones" icon="person-fill"></b-icon>
+                            <input
+                                v-model="nome"
+                                class="texto"
+                                type="text"
+                                placeholder="Nome"
+                                size="md"
+                            />
+                            </div>
+                        </b-col>
+
+                        <b-col cols="12" md="12">
+                            <div class="campoTexto">
                             <b-icon class="icones" icon="envelope-fill"></b-icon>
                             <input
                                 v-model="email"
@@ -42,7 +54,21 @@
                         </b-col>
 
                         <b-col cols="12" md="12">
-                            <div class="texto">
+                            <div id="campoTexto">
+                            <b-icon class="icones" icon="telephone-fill"></b-icon>
+                            <input
+                                v-model="telefone"
+                                type="tell"
+                                class="texto"
+                                placeholder="Telefone"
+                                size="md"
+                                required
+                            />
+                            </div>
+                        </b-col>
+
+                        <b-col cols="12" md="12">
+                            <div class="campoTexto">
                             <b-icon class="icones" icon="lock-fill"></b-icon>
                             <input
                                 v-model="senha"
@@ -55,21 +81,41 @@
                             </div>
                         </b-col>
 
+                        <b-col cols="12" md="12">
+                            <div id="campoTexto">
+                            <b-icon class="icones" icon="lock-fill"></b-icon>
+                            <input
+                                v-model="confirmSenha"
+                                type="password"
+                                class="texto"
+                                placeholder="Confirmar Senha"
+                                size="md"
+                                required
+                            />
+                            </div>
+                            <small v-show="senhaIncorreta == true" class="texto"
+                            >A senha é diferente</small
+                            >
+                        </b-col>
+
                         <b-col cols="12" md="auto">
                             <p>
-                            <b-form-checkbox :state="checkbox" v-model="concordo">
-                                Mantenha-se conectado
-                                <router-link class="link" to="/"
-                                >Esqueci a senha</router-link
-                                ></b-form-checkbox
+                            <b-form-checkbox :state="checkbox" v-model="aceitar">
+                                Aceitar os termos de uso de privacidade</b-form-checkbox
                             >
                             </p>
                         </b-col>
 
-                        <b-col cols="12" md="12">
-                            <button class="btn btn-primary btn-lg btn-block">Login</button>
+                        <b-col cols="11" md="11">
+                            <button
+                            type="button"
+                            size="md"
+                            @click="Validacao"
+                            class="mb-3 btn"
+                            >
+                            Criar Conta
+                            </button>
                         </b-col>
-                    </div>
                     </form>
                 </b-row>
                 </div> 
@@ -79,14 +125,45 @@
 </template>
 <script>
 export default {
-    name:'Login',
+    name:'cadastrar',
     data() {
     return {
+      nome: '',
       email: '',
+      telefone: '',
       senha: '',
-      concordo: false,
-      backgroundimg: require('@/assets/img6.jpg'),
+      confirmSenha: '',
+      aceitar: false,
+      senhaIncorreta: false,
+      fornecedor: false,
     }
+  },
+  computed: {
+    checkbox() {
+      return Boolean(this.aceitar)
+    },
+  },
+  methods: {
+    BotaoCliente: function () {
+      return (this.fornecedor = false)
+    },
+    BotaoFornecedor: function () {
+      return (this.fornecedor = true)
+    },
+    Validacao: function () {
+      if (
+        this.nome.length < 4 ||
+        this.senha.length < 4 ||
+        this.telefone == ''
+      ) {
+        this.aceitar = false
+        alert('Preencha os dados corretamente')
+      } else if (this.senha != this.confirmSenha) {
+        this.senhaIncorreta = true
+      } else {
+        console.log('Dados enviados')
+      }
+    },
   },
 }
 </script>
