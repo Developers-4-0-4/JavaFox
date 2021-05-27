@@ -10,9 +10,9 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-12 col-xl-3 col-lg-3">
                         <b-iconstack font-scale="3" class="Card-Aligmnt">
-                                <b-icon stacked icon="circle-fill" variant="info"></b-icon>
-                                <b-icon stacked icon="check" scale="0.5" variant="white"></b-icon>
-                            </b-iconstack>
+                            <b-icon stacked icon="circle-fill" variant="info"></b-icon>
+                            <b-icon stacked icon="check" scale="0.5" variant="white"></b-icon>
+                        </b-iconstack>
                         <p>Professores De Qualidade</p>
                     </div>
                     <div class="col-md-3 col-sm-12 col-xl-3 col-lg-3">
