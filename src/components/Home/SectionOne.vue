@@ -1,6 +1,5 @@
 <template>
-    <div class="container-fluid">
-        
+    <div class="container-fluid p-3 mb-4">
         <div class="row">
             <div class="col-12 text-center">
                 <h1>JavaFox Drivers</h1>

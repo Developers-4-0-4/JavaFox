@@ -7,8 +7,8 @@
 
             <b-collapse id="nav-collapse" is-nav>
                 <b-navbar-nav class="ml-auto" >
-                    <b-nav-item href="#"><router-link to="/">Link</router-link></b-nav-item>
-                    <b-nav-item href="#" disabled><router-link to="/">Link</router-link></b-nav-item>
+                    <b-nav-item href="#"><router-link to="/" class="link">Home</router-link></b-nav-item>
+                    <b-nav-item href="#" disabled><router-link to="/" class="link">Sobre Nós</router-link></b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>
@@ -19,3 +19,9 @@ export default {
     name:'Navbar'
 }
 </script>
+
+<style scoped>
+.link{
+    text-decoration: none;
+}
+</style>
