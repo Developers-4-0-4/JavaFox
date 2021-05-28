@@ -307,4 +307,33 @@ p {
   margin-left: 7px;
   color: #ffffff;
 }
+
+@media only screen and (max-width: 650px) {
+  .Login {
+    position: relative;
+    /* height: 130vh;
+    width: 130vw; */
+  }
+  .login {
+  width: 300px;
+  background: rgba(37, 35, 35, 0.8) !important;
+  margin: 60px auto;
+  padding: 15px;
+  box-shadow: 1px 2px 7px rgb(32, 25, 25);
+}
+}
+@media only screen and (max-width: 280px) {
+  .Login {
+    position: relative;
+    height: 110vh;
+    width: 110vw;
+  }
+  .login {
+  width: 280px;
+  background: rgba(37, 35, 35, 0.8) !important;
+  margin: auto;
+  padding: 15px;
+  box-shadow: 1px 2px 7px rgb(32, 25, 25);
+}
+}
 </style>

@@ -3,7 +3,7 @@
         <Navbar />
         <div class="container">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12 MarginTopImg">
                     <img src="../assets/logo.jpg" class="img-fluid img" alt="">
                 </div>
                 <div class="col-12">
@@ -44,6 +44,14 @@ export default {
 <style scoped>
 .img{
     /* margin-top: -80px; */
-    width: 20%;
+    width: 120px;
+}
+.MarginTopImg{
+    margin-top: 70px !important;
+  }
+@media only screen and (max-width: 650px) {
+  .MarginTopImg{
+    margin-top: 70px !important;
+  }
 }
 </style>

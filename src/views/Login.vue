@@ -1,5 +1,5 @@
 <template>
-    <div class="Login logn container-fluid">
+    <div class="container-fluid Login">
        <div class="row ">
            <div class="col-12">
                <div  class="login">
@@ -93,24 +93,22 @@ export default {
 }
 </script>
 <style scoped>
-.Login{
-}
 .img{
     width: 20%;
 }
-.logn {
+.Login {
  position: relative;
  height: 100vh;
  width: 100vw;
 }
-.logn::before{
+.Login::before{
     content: ' ';
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    background: url('../assets/img6.jpg')no-repeat center center fixed ;
+    background: url('../assets/img6.jpg')no-repeat center center ;
     background-size: cover;
     z-index: -1;
     filter: brightness(0.5);
@@ -164,5 +162,33 @@ p {
   margin-top: 10px;
   margin-left: 7px;
   color: #ffffff;
+}
+@media only screen and (max-width: 650px) {
+  .Login {
+    position: relative;
+    /* height: 130vh;
+    width: 130vw; */
+  }
+  .login {
+  width: 300px;
+  background: rgba(37, 35, 35, 0.8) !important;
+  margin: 60px auto;
+  padding: 15px;
+  box-shadow: 1px 2px 7px rgb(32, 25, 25);
+}
+}
+@media only screen and (max-width: 280px) {
+  .Login {
+    position: relative;
+    height: 110vh;
+    width: 110vw;
+  }
+  .login {
+  width: 280px;
+  background: rgba(37, 35, 35, 0.8) !important;
+  margin: auto;
+  padding: 15px;
+  box-shadow: 1px 2px 7px rgb(32, 25, 25);
+}
 }
 </style>
