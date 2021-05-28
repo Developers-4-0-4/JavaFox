@@ -75,5 +75,6 @@ export default {
     height: 100%;
     background: url('../../assets/img2.jpg')no-repeat center center fixed;
     background-size: cover;
+    filter: brightness(0.5);
 }
 </style>

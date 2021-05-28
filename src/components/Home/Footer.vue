@@ -56,7 +56,8 @@ export default {
     top: 0;
     left: 0;
     z-index: -1;
-    background: url("../../assets/img2.jpg")center center;
+    background: url("../../assets/footer.jpg")no-repeat center center;
+    background-size: cover;
     filter: brightness(0.4);
 }
 </style>

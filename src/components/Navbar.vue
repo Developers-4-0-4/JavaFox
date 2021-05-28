@@ -12,7 +12,7 @@
                  </b-navbar-nav>
                 <b-navbar-nav class="mr-auto" >
                     <b-nav-item ><router-link to="/Login" class="link">Login</router-link></b-nav-item>
-                    <b-nav-item ><router-link to="/signup" class="link">Inscrever-se</router-link></b-nav-item>
+                    <b-nav-item ><router-link to="/cadastrar" class="link">Inscrever-se</router-link></b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>

@@ -6,13 +6,15 @@
                 <b-row class="justify-content-md-center">
                     <b-col class="ml-4" cols="12" md="12">
                     <div class="ml-4 d-flex justify-content-center" >
-                        <b-img
-                        id="img" class="img ml-4 img-fluid"
-                        :src="require('../assets/logo.jpg')"
-                        fluid
-                        alt="Responsive image"
-                        >
-                        </b-img>
+                        <router-link class="d-flex justify-content-center" to="/"
+                        ><b-img
+                            id="img" class="img ml-4 img-fluid"
+                            :src="require('../assets/logo.jpg')"
+                            fluid
+                            alt="Responsive image"
+                            >
+                            </b-img>
+                      </router-link>
                     </div>
                     </b-col>
 
