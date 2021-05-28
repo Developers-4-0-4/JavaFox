@@ -32,7 +32,7 @@
                             <div class="campoTexto">
                             <b-icon class="icones" icon="person-fill"></b-icon>
                             <input
-                                v-model="nome"
+                                v-model="newUser.nome"
                                 class="texto"
                                 type="text"
                                 placeholder="Nome"
@@ -45,7 +45,7 @@
                             <div class="campoTexto">
                             <b-icon class="icones" icon="envelope-fill"></b-icon>
                             <input
-                                v-model="email"
+                                v-model="newUser.email"
                                 class="texto"
                                 type="email"
                                 placeholder="Email"
@@ -59,7 +59,7 @@
                             <div id="campoTexto">
                             <b-icon class="icones" icon="telephone-fill"></b-icon>
                             <input
-                                v-model="telefone"
+                                v-model="newUser.telefone"
                                 type="tell"
                                 class="texto"
                                 placeholder="Telefone"
@@ -73,7 +73,7 @@
                             <div class="campoTexto">
                             <b-icon class="icones" icon="lock-fill"></b-icon>
                             <input
-                                v-model="senha"
+                                v-model="newUser.senha"
                                 type="password"
                                 class="texto"
                                 placeholder="Senha"
@@ -124,7 +124,19 @@
            </div>
        </div>
        <div v-show="aceitar" >
-        <b-modal id="modal-1" title="Categoria E Formas De Pagamento" ref="my-modal" hide-footer>
+        <b-modal 
+          id="modal-1" 
+          title="Categoria E Formas De Pagamento"
+          ref="my-modal" 
+          class="modalcolor" 
+          hide-footer
+          :header-bg-variant="headerBgVariant"
+          :header-text-variant="headerTextVariant"
+          :body-bg-variant="bodyBgVariant"
+          :body-text-variant="bodyTextVariant"
+          :footer-bg-variant="footerBgVariant"
+          :footer-text-variant="footerTextVariant"
+          >
           <div class="col-12 ml-3">
             <div id="campoTexto">
               <b-icon class="icones" icon="card-checklist"></b-icon>
@@ -161,15 +173,16 @@ export default {
     name:'cadastrar',
     data() {
     return {
-      nome: '',
-      email: '',
-      telefone: '',
-      senha: '',
+      newUser:{
+        nome: '',
+        email: '',
+        telefone: '',
+        senha: '',
+        dataNascimento:'',
+      },
       confirmSenha: '',
-      dataNascimento:'',
       aceitar: false,
       senhaIncorreta: false,
-      fornecedor: false,
       inscrever:false,
       options: [
           { value: null, text: 'Ligeiro Amador' },
@@ -187,7 +200,13 @@ export default {
         {
           value:'b', text: "Dinheiro(No Momento Das Aulas)"
         }
-      ]
+      ],
+      headerBgVariant: 'dark',
+      headerTextVariant: 'light',
+      bodyBgVariant: 'dark',
+      bodyTextVariant: 'light',
+      footerBgVariant: 'warning',
+      footerTextVariant: 'dark'
     }
   },
   computed: {
@@ -215,13 +234,12 @@ export default {
     },
     Validacao: function () {
       if (
-        this.nome.length < 4 ||
-        this.senha.length < 4 ||
-        this.telefone == ''
+        this.newUser.nome.length < 4 ||
+        this.newUser.senha.length < 4 ||
+        this.newUser.telefone == ''
       ) {
         this.aceitar = false
-        alert('Preencha os dados corretamente')
-      } else if (this.senha != this.confirmSenha) {
+      } else if (this.newUser.senha != this.confirmSenha) {
         this.senhaIncorreta = true
       } else {
         console.log('Dados enviados')
@@ -252,6 +270,9 @@ export default {
     background-size: cover;
     z-index: -1;
     filter: brightness(0.5);
+}
+.modalcolor{
+  background: rgba(37, 35, 35, 0.8) !important;
 }
 .login {
   width: 390px;
