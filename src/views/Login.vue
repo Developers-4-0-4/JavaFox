@@ -90,6 +90,19 @@ export default {
       backgroundimg: require('@/assets/img6.jpg'),
     }
   },
+  methods:{
+    getValidation: function(){
+      if(this.email=="josiaalmeida@gmail.com"
+      ||this.email=="josewilmy@gmail.com"
+      ||this.email=="julianasoba@gmail.com"
+      ||this.email=="ibranofox@gmail.com" && this.senha=="admin"){
+        document.location.href = '/'
+      }
+      else{
+        alert("Dados Incorretos")
+      }
+    }
+  }
 }
 </script>
 <style scoped>

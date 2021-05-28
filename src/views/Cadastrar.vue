@@ -241,8 +241,13 @@ export default {
         this.aceitar = false
       } else if (this.newUser.senha != this.confirmSenha) {
         this.senhaIncorreta = true
-      } else {
-        console.log('Dados enviados')
+      }
+      else{
+        alert("Preencha os Dados Devidamente")
+      }
+      if(this.inscrever == true){
+        alert("Dados Enviados")
+        document.location.href = '/'
       }
     },
   },
