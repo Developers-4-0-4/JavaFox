@@ -1,53 +1,17 @@
 <template>
-    <div class="">
-        <Navbar />
-        <div class="container">
-            <div class="row">
-                <div class="col-12 MarginTopImg">
-                    <img src="../assets/logo.jpg" class="img-fluid img" alt="">
-                </div>
-                <div class="col-12">
-                    <h1>Sobre Nós</h1>
-                </div>
-                <div class="col-12">
-                    <p>What is Lorem Ipsum?
-                        Lorem Ipsum is simply dummy text of the 
-                        printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's 
-                        standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of 
-                        type and scrambled it to make a type specimen 
-                        book. It has survived not only five centuries,
-                        but also the leap into electronic typesetting,
-                        remaining essentially unchanged. It was popularised in 
-                        the 1960s with the release of Letraset sheets containing
-                        Lorem Ipsum passages, and more recently with desktop 
-                        publishing software like Aldus PageMaker including versions
-                            of Lorem Ipsum.</p>
-                </div>
-                <div class="col-12">
-                    <div id="map" class="mb-5"></div>
-                </div>
-            </div>
-        </div>
-        
-    </div>
+  <div id="map"></div>
 </template>
 
 <script>
-import Navbar from '@/components/Navbar'
-import { API_KEY } from "../components/API_KEY";
+import { API_KEY } from "./API_KEY";
 import {Loader} from 'google-maps';
 
 const loader = new Loader(API_KEY);
 export default {
-    name:'Sobre_Nos',
-    components:{
-        Navbar
-    },
-    mounted() {
+  name:'Maps',
+  mounted() {
     loader.load().then(function (google) {
-      var myLatlng = new google.maps.LatLng(-8.8243033, 13.2444611);
+      var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
       var mapOptions = {
         zoom: 13,
         center: myLatlng,
@@ -124,25 +88,5 @@ export default {
       marker.setMap(map);
     });
   }
-}
+};
 </script>
-
-<style scoped>
-.img{
-    /* margin-top: -80px; */
-    width: 120px;
-}
-.MarginTopImg{
-    margin-top: 70px !important;
-  }
-  #map {
-    position: relative;
-    width: 100%;
-    height: calc(100vh - 60px);
-}
-@media only screen and (max-width: 650px) {
-  .MarginTopImg{
-    margin-top: 70px !important;
-  }
-}
-</style>

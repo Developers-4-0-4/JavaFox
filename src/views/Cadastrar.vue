@@ -147,7 +147,7 @@
             <div id="campoTexto">
               <b-icon class="icones" icon="calendar"></b-icon>
               <input
-                  v-model="dataNascimento"
+                  v-model="newUser.dataNascimento"
                   type="number"
                   class="texto data"
                   size="md"
@@ -159,10 +159,10 @@
           <div class="col-12 ml-3">
             <div id="campoTexto">
               <b-icon class="icones" icon="credit-card2-back-fill"></b-icon>
-              <b-form-select v-model="selected" :options="pagamento" size="sm" class="mt-3"></b-form-select>
+              <b-form-select v-model="selected2" :options="pagamento" size="sm" class="mt-3"></b-form-select>
             </div>
           </div>
-          <b-button class="mt-3" variant="outline-danger" block @click="hideModal">Concluir</b-button>
+          <b-button class="mt-3" variant="outline-danger" block @click="Validacao">Concluir</b-button>
           <b-button class="mt-2" variant="outline-warning" block @click="toggleModal">Cancelar</b-button>
         </b-modal>
       </div>
@@ -176,9 +176,9 @@ export default {
       newUser:{
         nome: '',
         email: '',
-        telefone: '',
+        telefone: 0,
         senha: '',
-        dataNascimento:'',
+        dataNascimento:0,
       },
       confirmSenha: '',
       aceitar: false,
@@ -190,6 +190,7 @@ export default {
           { value: 'b', text: 'Pesado Profissional' }
         ],
       selected: null,
+      selected2:null,
       pagamento:[
         {
           value:null, text: "Multicaixa Express"
@@ -206,7 +207,8 @@ export default {
       bodyBgVariant: 'dark',
       bodyTextVariant: 'light',
       footerBgVariant: 'warning',
-      footerTextVariant: 'dark'
+      footerTextVariant: 'dark',
+
     }
   },
   computed: {
@@ -219,8 +221,7 @@ export default {
     //     this.$refs['my-modal'].show()
     //   },
       hideModal() {
-        this.inscrever=true
-        this.$refs['my-modal'].hide()
+        
       },
       toggleModal() {
         this.inscrever=false
@@ -238,17 +239,39 @@ export default {
         this.newUser.senha.length < 4 ||
         this.newUser.telefone == ''
       ) {
-        this.aceitar = false
+        alert("Dados vazios")
+        this.$refs['my-modal'].toggle('#toggle-btn')
       } else if (this.newUser.senha != this.confirmSenha) {
         this.senhaIncorreta = true
       }
-      else{
-        alert("Preencha os Dados Devidamente")
-      }
-      if(this.inscrever == true){
-        alert("Dados Enviados")
-        document.location.href = '/'
-      }
+      else if(
+        this.newUser.nome.length >= 4 ||
+        this.newUser.senha.length >= 4 ||
+        this.newUser.telefone != ''){
+          this.aceitar = false
+        }
+        if(this.newUser.dataNascimento>=18 && this.selected==null){
+          this.inscrever = true
+          this.$refs['my-modal'].hide()
+        }
+        else if(this.newUser.dataNascimento>=18 && this.newUser.dataNascimento<=22 && this.selected=='a'){
+          alert("Idade insuficiente")
+        }
+        else if(this.newUser.dataNascimento>=18 && this.newUser.dataNascimento<=25 && this.selected=='b'){
+          alert("Idade insuficiente")
+        }
+        else if(this.newUser.dataNascimento>45 && this.selected=='b'){
+          alert("Idade Avançada")
+        }
+        else if(this.newUser.dataNascimento<18)
+          alert("Menor de idade")
+        else{
+          this.inscrever = true
+          this.$refs['my-modal'].hide()
+          alert("Inscrito")
+          document.location.href = '/'
+        }
+      
     },
   },
 }
@@ -288,7 +311,7 @@ export default {
   box-shadow: 1px 2px 7px rgb(32, 25, 25);
 }
 .data{
-  color: #000 !important;
+  color: rgb(255, 250, 250) !important;
 }
 .texto {
   margin: 10px auto;
