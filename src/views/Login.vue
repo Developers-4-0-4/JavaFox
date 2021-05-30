@@ -140,12 +140,12 @@ export default {
 .btn {
   color: rgb(255, 255, 255);
   border-radius: 10px;
-  background-color: rgb(230, 168, 0);
+  background-color: #0DCAF0;
   width: 100%;
 }
 .btn:hover {
   color: rgb(255, 255, 255);
-  background-color: rgb(235, 191, 71);
+  background-color: rgb(0, 0, 0);
   border-radius: 10px;
 }
 .btn-secondary:not(:disabled):not(.disabled):active,
@@ -156,12 +156,12 @@ export default {
   border: none;
 }
 .icones {
-  color: rgb(235, 191, 71);
+  color: #0DCAF0;
   font-size: 25px;
   margin-right: 10px;
 }
 .link {
-  color: rgb(235, 191, 71) !important;
+  color: #0DCAF0 !important;
 }
 input {
   background: transparent;

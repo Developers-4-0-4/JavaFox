@@ -1,49 +1,51 @@
 <template>
-    <div class="">
-        <Navbar />
-        <div class="container">
-            <div class="row">
-                <div class="col-12 MarginTopImg">
-                    <img src="../assets/logo.jpg" class="img-fluid img" alt="">
-                </div>
-                <div class="col-12">
-                    <h1>Sobre Nós</h1>
-                </div>
-                <div class="col-12">
-                    <p>What is Lorem Ipsum?
-                        Lorem Ipsum is simply dummy text of the 
-                        printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's 
-                        standard dummy text ever since the 1500s,
-                        when an unknown printer took a galley of 
-                        type and scrambled it to make a type specimen 
-                        book. It has survived not only five centuries,
-                        but also the leap into electronic typesetting,
-                        remaining essentially unchanged. It was popularised in 
-                        the 1960s with the release of Letraset sheets containing
-                        Lorem Ipsum passages, and more recently with desktop 
-                        publishing software like Aldus PageMaker including versions
-                            of Lorem Ipsum.</p>
-                </div>
-                <div class="col-12">
-                    <div id="map" class="mb-5"></div>
-                </div>
-            </div>
+  <div class="">
+    <Navbar />
+    <div class="container">
+      <div class="row">
+        <div class="col-12 MarginTopImg">
+            <img src="../assets/logo.jpg" class="img-fluid img" alt="">
         </div>
-        
+        <div class="col-12">
+            <h1>Sobre Nós</h1>
+        </div>
+        <div class="col-12">
+            <p>What is Lorem Ipsum?
+                Lorem Ipsum is simply dummy text of the 
+                printing and typesetting industry. 
+                Lorem Ipsum has been the industry's 
+                standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of 
+                type and scrambled it to make a type specimen 
+                book. It has survived not only five centuries,
+                but also the leap into electronic typesetting,
+                remaining essentially unchanged. It was popularised in 
+                the 1960s with the release of Letraset sheets containing
+                Lorem Ipsum passages, and more recently with desktop 
+                publishing software like Aldus PageMaker including versions
+                    of Lorem Ipsum.</p>
+        </div>
+        <div class="col-12">
+            <div id="map" class="mb-5"></div>
+        </div>
+      </div>
     </div>
+    <Footer />
+  </div>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar'
 import { API_KEY } from "../components/API_KEY";
 import {Loader} from 'google-maps';
+import Footer from '@/components/Home/Footer'
 
 const loader = new Loader(API_KEY);
 export default {
     name:'Sobre_Nos',
     components:{
-        Navbar
+        Navbar,
+        Footer
     },
     mounted() {
     loader.load().then(function (google) {
