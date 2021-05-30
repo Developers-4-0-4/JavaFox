@@ -166,6 +166,42 @@
           <b-button class="mt-2" variant="outline-warning" block @click="toggleModal">Cancelar</b-button>
         </b-modal>
       </div>
+      <b-alert
+        v-model="append"
+        class="position-fixed fixed-top m-0 rounded-0"
+        style="z-index: 2000;"
+        variant="danger"
+        dismissible
+      >
+        Dados Vazios
+      </b-alert>
+      <b-alert
+        v-model="idade"
+        class="position-fixed fixed-top m-0 rounded-0"
+        style="z-index: 2000;"
+        variant="danger"
+        dismissible
+      >
+        Falha no preenchimento de dados
+      </b-alert>
+      <b-alert
+        v-model="idadeAvancada"
+        class="position-fixed fixed-top m-0 rounded-0"
+        style="z-index: 2000;"
+        variant="danger"
+        dismissible
+      >
+        Falha, Idade Avançada
+      </b-alert>
+      <b-alert
+        v-model="inscrito"
+        class="position-fixed fixed-top m-0 rounded-0"
+        style="z-index: 2000;"
+        variant="danger"
+        dismissible
+      >
+        Inscrição Concluida
+      </b-alert>
     </div>    
 </template>
 <script>
@@ -180,6 +216,8 @@ export default {
         senha: '',
         dataNascimento:0,
       },
+      append:false,
+      idade:false,
       confirmSenha: '',
       aceitar: false,
       senhaIncorreta: false,
@@ -208,7 +246,8 @@ export default {
       bodyTextVariant: 'light',
       footerBgVariant: 'warning',
       footerTextVariant: 'dark',
-
+      idadeAvancada:false,
+      inscrito:false
     }
   },
   computed: {
@@ -238,7 +277,7 @@ export default {
         this.newUser.senha.length < 4 ||
         this.newUser.telefone == ''
       ) {
-        alert("Dados vazios")
+        this.append=true
         this.$refs['my-modal'].toggle('#toggle-btn')
       } else if (this.newUser.senha != this.confirmSenha) {
         this.senhaIncorreta = true
@@ -255,19 +294,19 @@ export default {
           document.location.href = 'https://javafoxbackoffice.web.app/#/dashboard'
         }
         else if(this.newUser.dataNascimento>=18 && this.newUser.dataNascimento<=22 && this.selected=='a'){
-          alert("Idade insuficiente")
+          this.idade=true
         }
         else if(this.newUser.dataNascimento>=18 && this.newUser.dataNascimento<=25 && this.selected=='b'){
-          alert("Idade insuficiente")
+          this.idade=true
         }
         else if(this.newUser.dataNascimento>45 && this.selected=='b'){
-          alert("Idade Avançada")
+          this.idadeAvancada=true
         }
         else if(this.newUser.dataNascimento<18)
-          alert("Menor de idade")
+          this.idade=true
         else{
           this.$refs['my-modal'].hide()
-          alert("Inscrito")
+          this.inscrito=true
           document.location.href = 'https://javafoxbackoffice.web.app/#/dashboard'
         }
       

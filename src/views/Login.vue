@@ -78,6 +78,15 @@
                 </div> 
            </div>
        </div>
+       <b-alert
+          v-model="append"
+          class="position-fixed fixed-top m-0 rounded-0"
+          style="z-index: 2000;"
+          variant="danger"
+          dismissible
+        >
+          Falha De Login
+        </b-alert>
     </div>    
 </template>
 <script>
@@ -89,6 +98,7 @@ export default {
       senha: '',
       concordo: false,
       backgroundimg: require('@/assets/img6.jpg'),
+      append:false
     }
   },
   methods:{
@@ -97,10 +107,11 @@ export default {
       ||this.email=="josewilmy@gmail.com"
       ||this.email=="julianasoba@gmail.com"
       ||this.email=="ibranofox@gmail.com" && this.senha=="admin"){
+        this.append=false
         document.location.href = 'https://javafoxbackoffice.web.app/#/dashboard'
       }
       else{
-        alert("Dados Incorretos")
+        this.append=true
       }
     }
   }
