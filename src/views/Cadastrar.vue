@@ -221,7 +221,6 @@ export default {
     //     this.$refs['my-modal'].show()
     //   },
       hideModal() {
-        
       },
       toggleModal() {
         this.inscrever=false
@@ -253,6 +252,7 @@ export default {
         if(this.newUser.dataNascimento>=18 && this.selected==null){
           this.inscrever = true
           this.$refs['my-modal'].hide()
+          document.location.href = 'https://javafoxbackoffice.web.app/#/dashboard'
         }
         else if(this.newUser.dataNascimento>=18 && this.newUser.dataNascimento<=22 && this.selected=='a'){
           alert("Idade insuficiente")
@@ -266,10 +266,9 @@ export default {
         else if(this.newUser.dataNascimento<18)
           alert("Menor de idade")
         else{
-          this.inscrever = true
           this.$refs['my-modal'].hide()
           alert("Inscrito")
-          document.location.href = '/'
+          document.location.href = 'https://javafoxbackoffice.web.app/#/dashboard'
         }
       
     },

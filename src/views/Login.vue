@@ -27,7 +27,7 @@
                     </p>
                     </b-col>
 
-                    <form v-on:submit="Validacao" class="col-12">
+                    <form  class="col-12">
                     <div class="row">
                         <b-col cols="12" md="12">
                             <div class="texto">
@@ -69,7 +69,8 @@
                         </b-col>
 
                         <b-col cols="12" md="12">
-                            <button class="btn btn-primary btn-lg btn-block">Login</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-block"
+                             @click="getValidation()">Login</button>
                         </b-col>
                     </div>
                     </form>
@@ -96,7 +97,7 @@ export default {
       ||this.email=="josewilmy@gmail.com"
       ||this.email=="julianasoba@gmail.com"
       ||this.email=="ibranofox@gmail.com" && this.senha=="admin"){
-        document.location.href = '/'
+        document.location.href = 'https://javafoxbackoffice.web.app/#/dashboard'
       }
       else{
         alert("Dados Incorretos")

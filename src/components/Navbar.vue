@@ -5,7 +5,7 @@
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-            <b-collapse id="nav-collapse" is-nav>
+            <b-collapse id="nav-collapse" class="m-auto text-center" is-nav>
                 <b-navbar-nav class="m-auto" >
                     <b-nav-item ><router-link to="/" class="link">Home</router-link></b-nav-item>
                     <b-nav-item ><router-link to="/SobreNos" class="link">Sobre Nós</router-link></b-nav-item>
@@ -29,7 +29,7 @@ export default {
 <style scoped>
 .link{
     text-decoration: none !important;
-    color:rgb(204, 135, 7);
+    color:rgb(253, 253, 253);
     font-size: 20px;
 }
 .link:hover{
