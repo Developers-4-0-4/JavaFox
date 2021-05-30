@@ -27,7 +27,7 @@
                                     <b-icon stacked icon="telephone" scale="0.5" variant="white"></b-icon>
                                 </b-iconstack>
                             </div>
-                            <div class="col-12"><p><strong>JavaFoxCondutores.Web.App</strong></p></div>
+                            <div class="col-12"><p><strong>javafox-b9b46.web.app</strong></p></div>
                             <div class="col-12"><p> <b>Email:</b> javafor@hotmail.com </p></div>
                         </div>
                     </div>
@@ -43,7 +43,7 @@ export default {
 </script>
 <style scoped>
 .TextRed{
-    color: red;
+    color: #0DCAF0;
 }
 .footer{
     position: relative;
