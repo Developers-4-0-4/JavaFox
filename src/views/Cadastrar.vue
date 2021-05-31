@@ -318,7 +318,7 @@ export default {
 .Login{
 }
 .img{
-    width: 20%;
+    width: 100px;
 }
 .logn {
  position: relative;
@@ -398,8 +398,8 @@ p {
 @media only screen and (max-width: 650px) {
   .Login {
     position: relative;
-    /* height: 130vh;
-    width: 130vw; */
+    height: 140vh;
+    /* width: 130vw; */
   }
   .login {
   width: 300px;
