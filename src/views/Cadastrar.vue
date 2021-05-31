@@ -109,7 +109,7 @@
                         </b-col>
 
                         <b-col cols="11" md="11">
-                            <button v-b-modal.modal-1
+                            <button 
                             type="button"
                             size="md"
                             @click="Validacao"
@@ -182,7 +182,7 @@
         variant="danger"
         dismissible
       >
-        Falha no preenchimento de dados
+        Idade insuficiente
       </b-alert>
       <b-alert
         v-model="idadeAvancada"
@@ -197,7 +197,7 @@
         v-model="inscrito"
         class="position-fixed fixed-top m-0 rounded-0"
         style="z-index: 2000;"
-        variant="danger"
+        variant="success"
         dismissible
       >
         Inscrição Concluida
@@ -216,6 +216,7 @@ export default {
         senha: '',
         dataNascimento:0,
       },
+      showModal: "v-b-modal.modal-1",
       append:false,
       idade:false,
       confirmSenha: '',
@@ -273,41 +274,40 @@ export default {
     },
     Validacao: function () {
       if (
-        this.newUser.nome.length < 4 ||
-        this.newUser.senha.length < 4 ||
-        this.newUser.telefone == ''
+        this.newUser.nome.length < 4 &&
+        this.newUser.senha.length < 4 &&
+        this.newUser.telefone == 0
       ) {
         this.append=true
-        this.$refs['my-modal'].toggle('#toggle-btn')
+        // this.$refs['my-modal'].toggle('#toggle-btn')
       } else if (this.newUser.senha != this.confirmSenha) {
         this.senhaIncorreta = true
       }
       else if(
-        this.newUser.nome.length >= 4 ||
-        this.newUser.senha.length >= 4 ||
-        this.newUser.telefone != ''){
+        this.newUser.nome.length >= 4 &&
+        this.newUser.senha.length >= 4 &&
+        this.newUser.telefone != 0){
           this.aceitar = false
-        }
-        if(this.newUser.dataNascimento>=18 && this.selected==null){
-          this.inscrever = true
-          this.$refs['my-modal'].hide()
-          document.location.href = 'https://javafoxbackoffice.web.app/#/dashboard'
-        }
-        else if(this.newUser.dataNascimento>=18 && this.newUser.dataNascimento<=22 && this.selected=='a'){
-          this.idade=true
-        }
-        else if(this.newUser.dataNascimento>=18 && this.newUser.dataNascimento<=25 && this.selected=='b'){
-          this.idade=true
-        }
-        else if(this.newUser.dataNascimento>45 && this.selected=='b'){
-          this.idadeAvancada=true
-        }
-        else if(this.newUser.dataNascimento<18)
-          this.idade=true
-        else{
-          this.$refs['my-modal'].hide()
-          this.inscrito=true
-          document.location.href = 'https://javafoxbackoffice.web.app/#/dashboard'
+          this.showModal
+          this.$refs['my-modal'].toggle('#toggle-btn')
+          if(this.newUser.dataNascimento>=18 && this.selected==null){
+            this.inscrever = true
+            this.$refs['my-modal'].hide()
+            document.location.href = 'https://javafoxbackoffice.web.app/#/dashboard'
+          }
+          else if(this.newUser.dataNascimento>=18 && this.newUser.dataNascimento<=19 && this.selected=='a' || this.selected=='b'){
+            this.idade=true
+          }
+          else if(this.newUser.dataNascimento>45 && this.selected=='b'){
+            this.idadeAvancada=true
+          }
+          else if(this.newUser.dataNascimento<18)
+            this.idade=true
+          else{
+            this.$refs['my-modal'].hide()
+            this.inscrito=true
+            document.location.href = 'https://javafoxbackoffice.web.app/#/dashboard'
+          }
         }
       
     },

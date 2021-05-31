@@ -6,13 +6,14 @@
             </div>
             <div class="col-lg-4 col-sm-12 col-md-4 col-xl-4">
                 <b-card
-                    style="max-width: 100%;height: 425px; "
-                    class="mb-2"
+                    style=""
+                    class="mb-2 card"
                 >
                     <img src="../../assets/img5.jpg" class="img-fluid" alt="">
                     <h3>Ligeiro Amador</h3>
                     <b-card-text>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                    Para obter esta categoria é necessário possuir a idade mínima de 18 anos, 
+                    podendo inscrever-se durante os...
                     </b-card-text>
 
                     <b-button href="#" v-b-modal.modal-1 variant="primary">Saiba Mais</b-button>
@@ -20,13 +21,12 @@
             </div>
             <div class="col-lg-4 col-sm-12 col-md-4 col-xl-4">
                 <b-card
-                    style="max-width: 100%;height: 425px;"
-                    class="mb-2"
+                    class="mb-2 card"
                 >
                     <img src="../../assets/img4.jpg" class="img-fluid" alt="">
                     <h3>Ligeiro Profissional</h3>
                     <b-card-text>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                    
                     </b-card-text>
 
                     <b-button href="#" v-b-modal.modal-2 variant="primary">Saiba Mais</b-button>
@@ -34,13 +34,14 @@
             </div>
             <div class="col-lg-4 col-sm-12 col-md-4 col-xl-4">
                 <b-card
-                    style="max-width: 100%;height: 425px;"
-                    class="mb-2"
+                    class="mb-2 card"
                 >
                     <img src="../../assets/img3.jpg" class="img-fluid" alt="">
                     <h3>Veículos Pesados</h3>
                     <b-card-text>
-                    Some quick example text to build on the card title and make up the bulk of the card's content.
+                    Sem limite de peso –, aos quais pode ser atrelado 
+                    um reboque com peso bruto (massa máxima) até 750 kg.
+                    Para obter esta categoria...
                     </b-card-text>
 
                     <b-button href="#" v-b-modal.modal-3 variant="primary">Saiba Mais</b-button>
@@ -48,37 +49,31 @@
             </div>
         </div>
         <b-modal id="modal-1" title="Ligeiro Amador">
-            <p class="my-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever 
-                since the 1500s, when an unknown printer took a galley of type 
-                and scrambled it to make a type specimen book. It has survived 
-                not only five centuries, but also the leap into electronic typesetting,
-                 remaining essentially unchanged. It was popularised in the 1960s with the 
-                 release of Letraset sheets containing Lorem Ipsum passages, and more 
-                 recently with desktop publishing software like Aldus PageMaker including 
-                 versions of Lorem Ipsum.</p>
+            <p class="my-4">Para obter esta categoria é necessário 
+                possuir a idade mínima de 18 anos, podendo inscrever-se 
+                durante os 6 meses antecedentes, ou seja, aos 17 anos e meio. 
+                A par disso, o candidato deve residir em território nacional, 
+                possuir aptidão física e psicológica, 
+                e claro, obter aprovação no exame prático de condução.</p>
         </b-modal>
         <b-modal id="modal-2" title="Ligeiro Profissional">
-            <p class="my-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever 
-                since the 1500s, when an unknown printer took a galley of type 
-                and scrambled it to make a type specimen book. It has survived 
-                not only five centuries, but also the leap into electronic typesetting,
-                 remaining essentially unchanged. It was popularised in the 1960s with the 
-                 release of Letraset sheets containing Lorem Ipsum passages, and more 
-                 recently with desktop publishing software like Aldus PageMaker including 
-                 versions of Lorem Ipsum.</p>
+            <p class="my-4"></p>
         </b-modal>
         <b-modal id="modal-3" title="Veiculos Pesados">
-            <p class="my-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                Lorem Ipsum has been the industry's standard dummy text ever 
-                since the 1500s, when an unknown printer took a galley of type 
-                and scrambled it to make a type specimen book. It has survived 
-                not only five centuries, but also the leap into electronic typesetting,
-                 remaining essentially unchanged. It was popularised in the 1960s with the 
-                 release of Letraset sheets containing Lorem Ipsum passages, and more 
-                 recently with desktop publishing software like Aldus PageMaker including 
-                 versions of Lorem Ipsum.</p>
+            <p class="my-4">Sem limite de peso –, aos quais pode ser atrelado 
+                um reboque com peso bruto (massa máxima) até 750 kg.
+            Para obter esta categoria, através de inscrição numa Escola 
+            de Condução, é necessário que o candidato seja titular da categoria
+             B (carta de ligeiros), residir em território nacional, 
+            não estar a cumprir proibição ou inibição de conduzir, 
+            ter aptidão física, mental e psicológica, ter 21 anos de
+             idade (ou 18 anos no caso de possuir a Carta de Qualificação 
+             de Motorista – CQM – obtida através de frequência na formação 
+             CAM 280h, com aproveitamento).
+            No que se refere às aulas teóricas de técnica automóvel (mecânica), 
+            estas são presenciais e o candidato deve frequentar, pelo menos, 21
+             aulas – matéria específica –, e posteriormente, realizar o exame 
+             teórico de mecânica.</p>
         </b-modal>
     </div>
 </template>
@@ -99,6 +94,10 @@ export default {
 .textBlue{
     color: #0DCAF0;
     z-index: 1;
+}
+.card{
+    max-width: 100%;
+    height: 425px; 
 }
 .cards-background{
     position: relative;
